@@ -7,19 +7,13 @@ package naftoreiclag.geneticsandwiches;
 
 import naftoreiclag.geneticsandwiches.util.Node;
 
-public class Function extends Element
+public class GeneticFunction extends Element
 {
-	public String name;
-	
-	public Function(String name)
-	{
-		this.name = name;
-	}
-	
 	@Override
 	public Element clone()
 	{
-		return new Function(name);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

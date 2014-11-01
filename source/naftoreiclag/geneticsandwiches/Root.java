@@ -5,21 +5,11 @@
  */
 package naftoreiclag.geneticsandwiches;
 
-import naftoreiclag.geneticsandwiches.util.Node;
-
-public class Function extends Element
+public class Root extends Element
 {
-	public String name;
-	
-	public Function(String name)
-	{
-		this.name = name;
-	}
-	
 	@Override
 	public Element clone()
 	{
-		return new Function(name);
+		return new Root();
 	}
-
 }

@@ -3,17 +3,19 @@
  * Distributed under the Apache License Version 2.0 (http://www.apache.org/licenses/)
  * See accompanying file LICENSE
  */
-package naftoreiclag.geneticsandwiches.util;
+package naftoreiclag.geneticsandwiches;
 
 import java.util.LinkedList;
 import java.util.List;
 
-public abstract class Node<Subclass extends Node<Subclass>>
+import naftoreiclag.geneticsandwiches.util.Node;
+
+public abstract class Element
 {
-	protected Node<Subclass> parent;
-	public final List<Node<Subclass>> children = new LinkedList<Node<Subclass>>();
+	protected Element parent;
+	public final List<Element> children = new LinkedList<Element>();
 	
-	public void addChild(Node<Subclass> child)
+	public void addChild(Element child)
 	{
 		if(child == null)
 		{
@@ -26,14 +28,14 @@ public abstract class Node<Subclass extends Node<Subclass>>
 	}
 	
 	//
-	public abstract Node<Subclass> clone();
+	public abstract Element clone();
 	
 	//
-	public Node<Subclass> cloneWithChildren()
+	public Element cloneWithChildren()
 	{
-		Node<Subclass> nu = this.clone();
+		Element nu = this.clone();
 		
-		for(Node<Subclass> child : this.children)
+		for(Element child : this.children)
 		{
 			nu.addChild(child.cloneWithChildren());
 		}

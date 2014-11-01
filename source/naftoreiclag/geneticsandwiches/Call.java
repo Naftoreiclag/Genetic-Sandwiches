@@ -7,11 +7,11 @@ package naftoreiclag.geneticsandwiches;
 
 import naftoreiclag.geneticsandwiches.util.Node;
 
-public class Function extends Element
+public class Call extends Element
 {
 	public String name;
 	
-	public Function(String name)
+	public Call(String name)
 	{
 		this.name = name;
 	}
@@ -19,7 +19,7 @@ public class Function extends Element
 	@Override
 	public Element clone()
 	{
-		return new Function(name);
+		return new Call(name);
 	}
 
 }
