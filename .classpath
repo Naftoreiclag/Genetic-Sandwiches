@@ -7,5 +7,6 @@
 			<attribute name="javadoc_location" value="https://commons.apache.org/proper/commons-io/javadocs/api-2.4/"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="libraries/snakeyaml-1.14.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

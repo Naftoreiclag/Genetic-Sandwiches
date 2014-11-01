@@ -6,15 +6,18 @@
 package naftoreiclag.geneticsandwiches;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
+import org.yaml.snakeyaml.Yaml;
 
 public class Main
 {
 	static Root root;
 	
-	public static void main(String[] args)
+	public static void main(String[] args) throws Exception
 	{
 		root = new Root();
 		
@@ -22,20 +25,28 @@ public class Main
 		func.addChild(new Call("tconsume"));
 		
 		root.addChild(func);
+		loadAll();
+		//saveAll();
+	}
+	
+	public static void loadAll() throws FileNotFoundException
+	{
+		Yaml yaml = new Yaml();
 		
-		saveAll();
+		Object data = yaml.load(new FileInputStream(new File("data.yml")));
+		
+		System.out.println(yaml.dump(data));
 	}
 	
 	public static void saveAll()
 	{
 		StringBuilder builder = new StringBuilder();
 		
+		Yaml yaml = new Yaml();
+		
 		for(Element element : root.children)
 		{
 			
 		}
-		
-		FileUtils.writeStringToFile(new File("file.txt"), builder.toString());
-		System.out.println("   Successuful print");
 	}
 }
